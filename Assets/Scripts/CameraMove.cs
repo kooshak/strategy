@@ -6,7 +6,7 @@ public class CameraMove : MonoBehaviour {
     private int screenWidth;
     private int screenHeight;
 
-    public float speed;
+    public float speedMovement;
     public bool useCamMove = false;
 
     // Start is called before the first frame update
@@ -23,25 +23,25 @@ public class CameraMove : MonoBehaviour {
 
         if(Input.mousePosition.x <= 20)
         {
-            cameraPos.x -= Time.deltaTime * speed;
-            cameraPos.z += Time.deltaTime * speed;
+            cameraPos.x -= Time.deltaTime * speedMovement;
+            cameraPos.z += Time.deltaTime * speedMovement;
         }
         else if(Input.mousePosition.x >= screenWidth - 20)
         {
-            cameraPos.x += Time.deltaTime * speed;
-            cameraPos.z -= Time.deltaTime * speed;
+            cameraPos.x += Time.deltaTime * speedMovement;
+            cameraPos.z -= Time.deltaTime * speedMovement;
         }
         else if (Input.mousePosition.y <= 20)
         {
-            cameraPos.x -= Time.deltaTime * speed;
-            cameraPos.z -= Time.deltaTime * speed;
+            cameraPos.x -= Time.deltaTime * speedMovement;
+            cameraPos.z -= Time.deltaTime * speedMovement;
         }
         else if (Input.mousePosition.y >= screenHeight - 20)
         {
-            cameraPos.x += Time.deltaTime * speed;
-            cameraPos.z += Time.deltaTime * speed;
+            cameraPos.x += Time.deltaTime * speedMovement;
+            cameraPos.z += Time.deltaTime * speedMovement;
         }
-        if (useCamMove = true)
+        if (useCamMove == true)
         {
             transform.position = cameraPos;
         }
